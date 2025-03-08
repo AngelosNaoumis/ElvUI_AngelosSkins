@@ -1,0 +1,10 @@
+<Ui xmlns='http://www.blizzard.com/wow/ui/'>
+	<Script file='Ranker.lua'/>
+	<Script file='Spy.lua'/>
+	<Script file='NovaAddons.lua'/>
+	<Script file='WhatsTraining.lua'/>
+	<Script file='LFGBulletinBoard.lua'/>
+	<Script file='OpenAll.lua'/>
+	<Script file='AtlasLoot.lua'/>
+	<Script file='Atlas.lua'/>
+</Ui>

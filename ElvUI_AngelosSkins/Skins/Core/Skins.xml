@@ -1,0 +1,5 @@
+<Ui xmlns='http://www.blizzard.com/wow/ui/'>
+	<Script file='RXPGuidesAH.lua'/>
+	<Script file='Leatrix_Plus.lua'/>
+	<Script file='SimpleAddonManager.lua'/>
+</Ui>
