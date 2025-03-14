@@ -1,6 +1,7 @@
 local Name, Private = ...
 local E, L, V, P, G = unpack(ElvUI)
 local S = E:GetModule('Skins')
+local IsAddOnLoaded = _G.C_AddOns and _G.C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 
 local _G = _G
 local pairs = pairs
@@ -21,7 +22,7 @@ function S:Leatrix_Plus()
 end
 
 function S:Blizzard_TrainerUI()
-	if not E.db.AngelosSkins.Leatrix_Plus then return end
+	if not E.db.AngelosSkins.Leatrix_Plus and not IsAddOnLoaded("Leatrix_Plus") then return end
 
 	--style trainner enhancer
 	if _G.LeaPlusDB["EnhanceTrainers"] == "On" and _G.LeaPlusDB["ShowTrainAllBtn"] == "On" then
