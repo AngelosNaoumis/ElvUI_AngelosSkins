@@ -1,12 +1,13 @@
 local Name, Private = ...
 local E, L, V, P, G = unpack(ElvUI)
 local S = E:GetModule('Skins')
+local IsAddOnLoaded = _G.C_AddOns and _G.C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 
 local _G = _G
 local pairs = pairs
 
 function S:RXPGuides()
-	if not E.db.AngelosSkins.RXPGuides then return end
+	if not E.db.AngelosSkins.RXPGuides and not IsAddOnLoaded("RXPGuides") then return end
 
 	_G.RXP_IU_AH_SearchButton:StripTextures()
 	_G.RXP_IU_AH_BuyButton:StripTextures()
