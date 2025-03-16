@@ -1,14 +1,14 @@
 local Name, Private = ...
 local E, L, V, P, G = unpack(ElvUI)
 local S = E:GetModule('Skins')
+local IsAddOnLoaded = _G.C_AddOns and _G.C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 
 local _G = _G
 local pairs = pairs
 
 local function DBMStatusBarTimers()
-    if not E.db.AngelosSkins.DBM then return end
-    if not _G.DBT then return end
-
+    if not E.db.AngelosSkins.DBM or not IsAddOnLoaded("DBM-Core") or not _G.DBT then return end
+    
     -- Hook into ApplyStyle instead of doing it inside CreateBar
     hooksecurefunc(_G.DBT, 'CreateBar', function()
         for bar in _G.DBT:GetBarIterator() do
