@@ -20,15 +20,15 @@ function S:AtlasLootClassic()
 		S:HandleButton(_G["AtlasLoot-Button-1"])
 		S:HandleButton(_G["AtlasLoot-Button-2"])
 		S:HandleButton(_G["AtlasLoot-Button-3"])
-
-		S:HandleDropDown(_G["AtlasLoot-DropDown-1"])
-		S:HandleDropDown(_G["AtlasLoot-DropDown-2"])
+		
+		S:HandleDropDownBox(_G["AtlasLoot-DropDown-1"],200)
+		S:HandleDropDownBox(_G["AtlasLoot-DropDown-2"],200)
 
 		S:HandleNextPrevButton(_G["AtlasLoot_GUI-ItemFrame-nextPageButton"])
 		S:HandleNextPrevButton(_G["AtlasLoot_GUI-ItemFrame-prevPageButton"])
 
 		-- Adjust Sizes
-		_G["AtlasLoot_GUI-ItemFrame-SearchBox"]:SetHeigth(_G["AtlasLoot_GUI-ItemFrame-SearchBox"]:GetHeigth-14)
+		_G["AtlasLoot_GUI-ItemFrame-SearchBox"]:SetHeight(_G["AtlasLoot_GUI-ItemFrame-SearchBox"]:GetHeight() - 14)
 
 		-- Additional Things
 		-- Stip Dropdown Game Buttons
@@ -63,6 +63,35 @@ function S:AtlasLootClassic()
 		_G["AtlasLoot_GUI-ItemFrame"]:CreateBackdrop()
 
 		S:Unhook(_G["AtlasLoot_GUI-Frame"], "OnShow")
+
+		local function SkinAtlasLootCatFrames()
+			if _G["AtlasLoot-DropDown-CatFrame1"] then
+				S:HandleFrame(_G["AtlasLoot-DropDown-CatFrame1"])
+			end
+			if _G["AtlasLoot-DropDown-CatFrame2"] then
+				S:HandleFrame(_G["AtlasLoot-DropDown-CatFrame2"])
+			end
+			if _G["AtlasLoot-DropDown-CatFrame3"] then
+				S:HandleFrame(_G["AtlasLoot-DropDown-CatFrame3"])
+			end
+			if _G["AtlasLoot-DropDown-CatFrame4"] then
+				S:HandleFrame(_G["AtlasLoot-DropDown-CatFrame4"])
+			end
+		end
+
+		S:SecureHookScript(_G["AtlasLoot-DropDown-1"], "OnClick", SkinAtlasLootCatFrames)
+		S:SecureHookScript(_G["AtlasLoot-DropDown-2"], "OnClick", SkinAtlasLootCatFrames)
+		S:SecureHookScript(_G["AtlasLoot-DropDown-1-button"], "OnClick", SkinAtlasLootCatFrames)
+		S:SecureHookScript(_G["AtlasLoot-DropDown-2-button"], "OnClick", SkinAtlasLootCatFrames)
+
+		local function SkinSelectionFrame()
+			if _G["AtlasLoot_GUI-ItemFrame-clasFilterButton"].selectionFrame then
+				S:HandleFrame(_G["AtlasLoot_GUI-ItemFrame-clasFilterButton"].selectionFrame)
+			end
+		end
+
+		S:SecureHookScript(_G["AtlasLoot_GUI-ItemFrame-clasFilterButton"], "OnClick", SkinSelectionFrame)
+
 	end
 
 	S:SecureHookScript(_G["AtlasLoot_GUI-Frame"], "OnShow", SkinOnFrameShow)
