@@ -7,7 +7,9 @@ local _G = _G
 local pairs = pairs
 
 local function DBMStatusBarTimers()
-    if not E.db.AngelosSkins.DBM or not IsAddOnLoaded("DBM-Core") or not _G.DBT then return end
+    if not E.db.AngelosSkins.DBM then return end
+    if not IsAddOnLoaded("DBM-Core") then return end
+    if not _G.DBT then return end
     
     -- Hook into ApplyStyle instead of doing it inside CreateBar
     hooksecurefunc(_G.DBT, 'CreateBar', function()

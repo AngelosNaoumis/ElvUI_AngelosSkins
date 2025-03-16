@@ -1,12 +1,14 @@
 local Name, Private = ...
 local E, L, V, P, G = unpack(ElvUI)
 local S = E:GetModule('Skins')
+local IsAddOnLoaded = _G.C_AddOns and _G.C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 
 local _G = _G
 local pairs = pairs
 
 local function SkinSimpleAddonManager()
-    if not E.db.AngelosSkins.SimpleAddonManager and not IsAddOnLoaded("SkinSimpleAddonManager") then return end
+    if not E.db.AngelosSkins.SimpleAddonManager then return end
+    if not IsAddOnLoaded("SkinSimpleAddonManager") then return end
 
     local SAM = _G.SimpleAddonManager
     if not SAM or SAM.IsSkinned then return end

@@ -1,12 +1,14 @@
 local Name, Private = ...
 local E, L, V, P, G = unpack(ElvUI)
 local S = E:GetModule('Skins')
+local IsAddOnLoaded = _G.C_AddOns and _G.C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 
 local _G = _G
 local pairs = pairs
 
 function S:NovaSpellRankChecker()
 	if not E.db.AngelosSkins.NovaAddons then return end
+    if not IsAddOnLoaded("NovaSpellRankChecker") then return end
 
 	--style Nova Spell Rank Checker button
 	S:HandleButton(_G.SpellBookFrameButton)
@@ -21,6 +23,7 @@ end
 
 function S:NovaWorldBuffs()
 	if not E.db.AngelosSkins.NovaAddons then return end
+    if not IsAddOnLoaded("NovaWorldBuffs") then return end
 
 	E:Delay(1, function()
 		--style minimap layer frame

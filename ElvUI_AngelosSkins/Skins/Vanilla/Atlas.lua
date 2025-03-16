@@ -1,12 +1,14 @@
 local Name, Private = ...
 local E, L, V, P, G = unpack(ElvUI)
 local S = E:GetModule('Skins')
+local IsAddOnLoaded = _G.C_AddOns and _G.C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 
 local _G = _G
 
 function S:Atlas()
 
 	if not E.db.AngelosSkins.Atlas then return end
+    if not IsAddOnLoaded("Atlas") then return end
 
     E:Delay(1, function()
         local AtlasFrame = _G.AtlasFrame

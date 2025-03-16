@@ -1,6 +1,7 @@
 local Name, Private = ...
 local E, L, V, P, G = unpack(ElvUI)
 local S = E:GetModule('Skins')
+local IsAddOnLoaded = _G.C_AddOns and _G.C_AddOns.IsAddOnLoaded or _G.IsAddOnLoaded
 
 local _G = _G
 local hooksecurefunc = hooksecurefunc
@@ -10,6 +11,7 @@ local unpack = unpack
 
 function S:Spy()
 	if not E.db.AngelosSkins.Spy then return end
+    if not IsAddOnLoaded("Spy") then return end
 
     -- Handle the main Spy window
     local SpyMain = _G.Spy_MainWindow
