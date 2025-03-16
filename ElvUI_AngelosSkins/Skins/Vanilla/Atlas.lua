@@ -15,7 +15,7 @@ function S:Atlas()
         -- Skin main frames
         S:HandleFrame(AtlasFrame)
         S:HandleFrame(AtlasFrameSmall)
-        AtlasFrameSmall:SetWidth(AtlasFrameSmall:GetWidth() + 10)
+        AtlasFrameSmall:SetWidth(AtlasFrameSmall:GetWidth() + 15)
 
         _G.AtlasFrameMapFrame:CreateBackdrop()
         _G.AtlasFrameSmallMapFrame:CreateBackdrop()
