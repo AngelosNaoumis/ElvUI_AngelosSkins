@@ -22,6 +22,7 @@ P["AngelosSkins"] = {
 	["Leatrix_Plus"] = true,
 	["RXPGuidesAH"] = true,
 	["SimpleAddonManager"] = true,
+	["DBM"] = true,
 }
 
 --This function inserts our GUI table into the ElvUI Config. You can read about AceConfig here: http://www.wowace.com/addons/ace3/pages/ace-config-3-0-options-tables/
@@ -160,6 +161,18 @@ function MyPlugin:InsertOptions()
 				end,
 				set = function(info, value)
 					E.db.AngelosSkins.SimpleAddonManager = value
+					E:StaticPopup_Show('CONFIG_RL')
+				end,
+			},
+			DBM = {
+				order = 11,
+				type = "toggle",
+				name = "DBM",
+				get = function(info)
+					return E.db.AngelosSkins.DBM
+				end,
+				set = function(info, value)
+					E.db.AngelosSkins.DBM = value
 					E:StaticPopup_Show('CONFIG_RL')
 				end,
 			},
