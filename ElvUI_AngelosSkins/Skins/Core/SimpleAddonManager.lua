@@ -8,7 +8,7 @@ local pairs = pairs
 
 local function SkinSimpleAddonManager()
     if not E.db.AngelosSkins.SimpleAddonManager then return end
-    if not IsAddOnLoaded("SkinSimpleAddonManager") then return end
+    if not IsAddOnLoaded("SimpleAddonManager") then return end
 
     local SAM = _G.SimpleAddonManager
     if not SAM or SAM.IsSkinned then return end
@@ -21,7 +21,7 @@ local function SkinSimpleAddonManager()
     -- Buttons to skin
     local buttons = {
         SAM.EnableAllButton, SAM.DisableAllButton, SAM.OkButton, SAM.CancelButton,
-        SAM.SetsButton, SAM.ConfigButton, SAM.CategoryButton
+        SAM.SetsButton, SAM.ConfigButton, SAM.CategoryButton, SAM.ResultOptionsButton
     }
     for _, button in pairs(buttons) do
         S:HandleButton(button)
