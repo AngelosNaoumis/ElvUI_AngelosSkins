@@ -163,6 +163,18 @@ function MyPlugin:InsertOptions()
 					E:StaticPopup_Show('CONFIG_RL')
 				end,
 			},
+			Auctionator = {
+				order = 12,
+				type = "toggle",
+				name = "Auctionator",
+				get = function(info)
+					return E.db.AngelosSkins.Auctionator
+				end,
+				set = function(info, value)
+					E.db.AngelosSkins.Auctionator = value
+					E:StaticPopup_Show('CONFIG_RL')
+				end,
+			},
 		},
 	}
 end
