@@ -6,7 +6,7 @@ local _G = _G
 local pairs = pairs
 
 local function SkinSimpleAddonManager()
-	if not E.db.AngelosSkins.SkinSimpleAddonManager then return end
+    if not E.db.AngelosSkins.SimpleAddonManager then return end
 
     local SAM = _G.SimpleAddonManager
     if not SAM or SAM.IsSkinned then return end
@@ -24,9 +24,15 @@ local function SkinSimpleAddonManager()
     for _, button in pairs(buttons) do
         S:HandleButton(button)
     end
+    SAM.SetsButton:SetHeight(SAM.SetsButton:GetHeight() + 6)
+    SAM.SetsButton:ClearAllPoints()
+    SAM.SetsButton:SetPoint("TOPLEFT", _G.SAM_CharacterDropDown, "TOPRIGHT", 4, -2)
 
     -- Edit box
     S:HandleEditBox(SAM.SearchBox)
+    SAM.SearchBox:SetHeight(SAM.SearchBox:GetHeight() + 8)
+    SAM.SearchBox:ClearAllPoints()
+    SAM.SearchBox:SetPoint("TOPLEFT", SAM.SetsButton, "TOPRIGHT", 6, 0)
 
     -- Adjust button positions
     SAM.OkButton:ClearAllPoints()
