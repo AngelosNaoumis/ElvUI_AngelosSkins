@@ -2,4 +2,5 @@
 	<Script file='RXPGuidesAH.lua'/>
 	<Script file='Leatrix_Plus.lua'/>
 	<Script file='SimpleAddonManager.lua'/>
+	<Script file='DBM.lua'/>
 </Ui>
