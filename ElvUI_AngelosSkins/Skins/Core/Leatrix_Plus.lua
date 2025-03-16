@@ -7,7 +7,7 @@ local _G = _G
 local pairs = pairs
 
 function S:Leatrix_Plus()
-	if not E.db.AngelosSkins.Leatrix_Plus then return end
+	if not E.db.AngelosSkins.Leatrix_Plus and not IsAddOnLoaded("Leatrix_Plus") then return end
 
 	E:Delay(1, function()
 		--style Cloak and Helm checkboxes
